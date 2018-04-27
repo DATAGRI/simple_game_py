@@ -47,15 +47,32 @@ class jugador (object):
             self.moral[i] = aument_mor
         else:
             print('solo hay 2 jugadores, mas nada!!')
-        
-
-
     
+    def pelea_sin_hab(self):
+        if self.nombre[0] != self.nombre[1]:
+            print ('Que comienze la lucha!! entre ',self.nombre[0], 'y ',self.nombre[1] )
+            
+            if self.danio[0] > self.danio[1]:
+                print('jugador ',self.nombre[0],'mayor daño que ',self.nombre[1])
+                dism_vida = self.vida[1] - self.danio[0]
+                self.vida[1] = self.vida[1] - dism_vida
+            elif self.danio[1] > self.danio[0]:
+                print('jugador ',self.nombre[1],'mayor daño que ',self.nombre[0])
+                dism_vida1 = self.vida[0] - self.danio[1]
+                self.vida[1] = self.vida[1] - dism_vida1
 
+            if self.vida[0] > self.vida[1]:
+                print('jugador ',self.nombre[0],'ha ganado')
+            else:
+                print(self.nombre[1],'ha ganado')
 
 run = jugador()
-run.ing_dat()
-run.hab_pat_vol()
+count = 2
+while count > 0:
+    count = count - 1
+    run.ing_dat()
+run.pelea_sin_hab()
+
 
 
 
