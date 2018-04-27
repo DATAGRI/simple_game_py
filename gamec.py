@@ -53,7 +53,7 @@ class jugador (object):
             print ('Que comienze la lucha!! entre ',self.nombre[0], 'y ',self.nombre[1] )
             
             if self.danio[0] > self.danio[1]:
-                print('jugador ',self.nombre[0],'mayor daño que ',self.nombre[1])
+                print('el jugador ',self.nombre[0],'mayor daño que ',self.nombre[1])
                 dism_vida = self.vida[1] - self.danio[0]
                 self.vida[1] = self.vida[1] - dism_vida
             elif self.danio[1] > self.danio[0]:
