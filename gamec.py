@@ -25,9 +25,38 @@ class jugador (object):
         print('###ingrese moral del campeon ###')
         mor = int(input('ingrese cantidad de moral:'))
         self.moral.append(mor)
+    
+    def hab_pat_vol(self):
+        i = int(input('\ningrese 1 para campeon1: \ningrese 2 para campeon2:'))
+        if i == 1 or i == 2:
+            pat_vol = self.danio[i] + 30
+            self.danio[i] = pat_vol 
+        
+            aument_mor = self.moral[i] + 5
+            self.moral[0] = aument_mor
+        else:
+            print('solo hay 2 jugadores, mas nada!!')
+    
+    def hab_ganch_hig(self):
+        i = int(input('\ningrese 1 para campeon1: \ningrese 2 para campeon2:'))
+        if i == 1 or i == 2:
+            ganch_hig = self.danio[i] + 70
+            self.danio[i] = ganch_hig 
+        
+            aument_mor = self.moral[i] + 15
+            self.moral[i] = aument_mor
+        else:
+            print('solo hay 2 jugadores, mas nada!!')
+        
+
+
+    
+
 
 run = jugador()
 run.ing_dat()
+run.hab_pat_vol()
+
 
 
 
