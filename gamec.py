@@ -27,14 +27,21 @@ class jugador (object):
         mor = int(input('ingrese cantidad de moral:'))
         self.moral.append(mor)
     
-    def hab_pat_vol(self):
-        i = int(input('\ningrese 1 para campeon1: \ningrese 2 para campeon2:'))
-        if i == 1 or i == 2:
-            pat_vol = self.danio[i] + 30
-            self.danio[i] = pat_vol 
+    def hab_pat_vol(self,x,y):
+        #i = int(input('\ningrese 0 para campeon1: \ningrese 1 para campeon2:'))
+        if x == 0 or x == 1:
+            pat_vol = self.danio[x] + 30
+            self.danio[x] = pat_vol 
         
-            aument_mor = self.moral[i] + 5
-            self.moral[0] = aument_mor
+            aument_mor = self.moral[x] + 5
+            self.moral[x] = aument_mor
+            
+            if y != x:
+                self.vida[y] = self.vida[y] - self.danio[x]
+
+
+            print('\n resultado de la lucha, el jugador ', self.nombre[0],'cuenta con ', self.vida[0],' de vida')
+            print('\n resultado de la lucha, el jugador ', self.nombre[1],'cuenta con ', self.vida[1],' de vida')
         else:
             print('solo hay 2 jugadores, mas nada!!')
     
@@ -48,6 +55,7 @@ class jugador (object):
             self.moral[i] = aument_mor
         else:
             print('solo hay 2 jugadores, mas nada!!')
+        
     
     def pelea_sin_hab(self):
         if self.nombre[0] != self.nombre[1]:
@@ -71,8 +79,9 @@ class jugador (object):
         if self.nombre[0] != self.nombre[1]:
             print ('Que comienze la lucha!! entre ',self.nombre[0], 'y ',self.nombre[1] ) 
 
-          
-
+            x = ram.randint(0,1)
+            y = ram.randint(0,1)
+            self.hab_pat_vol(x,y)
 
 run = jugador()
 count = 2
