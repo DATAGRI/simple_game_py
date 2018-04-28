@@ -1,3 +1,4 @@
+import random as ram
 class jugador (object):
     nombre = []
     vida = []
@@ -65,6 +66,13 @@ class jugador (object):
                 print('jugador ',self.nombre[0],'ha ganado')
             else:
                 print(self.nombre[1],'ha ganado')
+        
+    def pelea_con_hab(self):
+        if self.nombre[0] != self.nombre[1]:
+            print ('Que comienze la lucha!! entre ',self.nombre[0], 'y ',self.nombre[1] ) 
+
+          
+
 
 run = jugador()
 count = 2
