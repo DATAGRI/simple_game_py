@@ -81,15 +81,19 @@ class jugador (object):
 
             x = ram.randint(0,1)
             y = ram.randint(0,1)
+            #print(x)
             self.hab_pat_vol(x,y)
 
 run = jugador()
 count = 2
+counter = 4
 while count > 0:
     count = count - 1
     run.ing_dat()
-run.pelea_sin_hab()
-
+# run.pelea_sin_hab()
+while counter > 0:
+    count = count - 1
+    run.pelea_con_hab()
 
 
 
