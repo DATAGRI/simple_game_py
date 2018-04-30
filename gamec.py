@@ -42,10 +42,7 @@ class jugador (object):
             if self.vida[0] >100 and self.vida[1] > 100:
                 print('\n resultado de la lucha, el jugador ', self.nombre[0],'cuenta con ', self.vida[0],' de vida')
                 print('\n resultado de la lucha, el jugador ', self.nombre[1],'cuenta con ', self.vida[1],' de vida')
-        else:
-            print('solo hay 2 jugadores, mas nada!!')
-        
-    
+                    
     def hab_ganch_hig(self):
         i = int(input('\ningrese 1 para campeon1: \ningrese 2 para campeon2:'))
         if i == 1 or i == 2:
@@ -56,8 +53,7 @@ class jugador (object):
             self.moral[i] = aument_mor
         else:
             print('solo hay 2 jugadores, mas nada!!')
-        
-    
+            
     def pelea_sin_hab(self):
         if self.nombre[0] != self.nombre[1]:
             print ('Que comienze la lucha!! entre ',self.nombre[0], 'y ',self.nombre[1] )
@@ -77,16 +73,11 @@ class jugador (object):
                 print(self.nombre[1],'ha ganado')
         
     def pelea_con_hab(self):
-        if self.nombre[0] != self.nombre[1]:
-            print ('Que comienze la lucha!! entre ',self.nombre[0], 'y ',self.nombre[1] ) 
-
             x = ram.randint(0,1)
             y = ram.randint(0,1)
             #print(x)
             self.hab_pat_vol(x,y)
-            
-
-
+        
 run = jugador()
 count = 2
 
@@ -94,11 +85,16 @@ while count > 0:
     count = count - 1
     run.ing_dat()
 # run.pelea_sin_hab()
-counter = 4
-while counter > 0:
-    counter = counter - 1
-    run.pelea_con_hab()
-    
+
+if  run.nombre[0] != run.nombre[1]:
+    print ('Que comienze la lucha!! entre ',self.nombre[0], 'y ',self.nombre[1] ) 
+    counter = 4
+    while counter > 0:
+        counter = counter - 1
+        run.pelea_con_hab()
+else:
+    print('\nLos nombres de los jugadores no deben ser iguales')
+            
     
          
 
