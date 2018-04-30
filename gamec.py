@@ -87,7 +87,7 @@ while count > 0:
 # run.pelea_sin_hab()
 
 if  run.nombre[0] != run.nombre[1]:
-    print ('Que comienze la lucha!! entre ',self.nombre[0], 'y ',self.nombre[1] ) 
+    print ('Que comienze la lucha!! entre ', run.nombre[0], 'y ', run.nombre[1] ) 
     counter = 4
     while counter > 0:
         counter = counter - 1
