@@ -46,6 +46,7 @@ class jugador (object):
                       self.nombre[0], 'cuenta con ', self.vida[0], ' de vida')
                 print('\n resultado de la lucha, el jugador ',
                       self.nombre[1], 'cuenta con ', self.vida[1], ' de vida')
+            self.danio[x] = self.danio[x] - 30
 
     def hab_ganch_hig(self):
         i = int(input('\ningrese 1 para campeon1: \ningrese 2 para campeon2:'))
@@ -80,32 +81,34 @@ class jugador (object):
                 print(self.nombre[1], 'ha ganado')
 
     def pelea_con_hab(self):
+        print('Que comienze la lucha!! entre ',
+              run.nombre[0], 'y ', run.nombre[1])
         print('presione el numero 0 para ataque del campeon: ',
-                      self.nombre[0], 'o 1 para el campeon: ', self.nombre[1])
+              run.nombre[0], 'o 1 para el campeon: ', run.nombre[1])
         x = int(input('opcion: '))
-
         if x == 0:
-            y=1
+            y = 1
         else:
-            y=0
+            y = 0
 
         # print(x)
         self.hab_pat_vol(x, y)
 
 
-run=jugador()
-count=2
+run = jugador()
+count = 2
 
 while count > 0:
-    count=count - 1
+    count = count - 1
     run.ing_dat()
 # run.pelea_sin_hab()
 
 if run.nombre[0] != run.nombre[1]:
-    print('Que comienze la lucha!! entre ', run.nombre[0], 'y ', run.nombre[1])
-    counter=100
+
+    counter = 100
     while counter > 0:
-        counter=counter - 1
+        counter = counter - 1
         run.pelea_con_hab()
+        break
 else:
     print('\nLos nombres de los jugadores no deben ser iguales')
